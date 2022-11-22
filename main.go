@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"time"
@@ -33,18 +34,11 @@ func main() {
 	monitor.Connect()
 	defer monitor.Disconnect()
 
-	// cmd := []byte(`{"execute":"query-sev-attestation-report","arguments":{"mnonce":"ZBaOEOsVmenc5q34VJb9jw=="}}`)
-	cmd := []byte(`{"execute":"query-sev-capabilities"}`)
+	cmd := []byte(`{"execute":"query-sev-attestation-report","arguments":{"mnonce":"ZBaOEOsVmenc5q34VJb9jw=="}}`)
 	raw, _ := monitor.Run(cmd)
-	var c capabilities
-	json.Unmarshal(raw, &c)
-	fmt.Println(c.Return.CertChain)
-	//		mnonce, _ := base64.StdEncoding.DecodeString("ZBaOEOsVmenc5q34VJb9jw==")
-	//		data, _ := base64.StdEncoding.DecodeString("eyJyZXR1cm4iOiB7ImRhdGEiOiAiWkJhT0VPc1ZtZW5jNXEzNFZKYjlqK2tjVFl0WGZHbDVPcWFVODFWN1VmVzVSbmhXUmJ5Wi9WOHI0Z3lEVGE5UkFRQUFBQUlRQUFBQ0FBQUFBQUFBQUpCNmh5ck9tZUpjZWZtTzJMV2ZEcy8yeGs5eUM4bklyMHU2cEZ3YlNOcFpzeTExYUg5Tk05OWY4MGI1NHRxSWdnQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUM4aUVzOUdQZ0pkcU8weTNIWnN6OGdUYkFLQ2hHWFRmR1RpaTl0ZjgvYmVKTTE5TXovdUE3SVZVcmlkYTMySFVBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE9PSJ9fQ==")
-	//		var attestReport AttestReport
-	//		json.Unmarshal(data, &attestReport)
-	//		fmt.Println(mnonce)
-	//		d, _ := base64.StdEncoding.DecodeString(attestReport.Return.Data)
-	//		fmt.Println(d[0:0x10])
-	//	}
+
+	var attestReport AttestReport
+	json.Unmarshal(raw, &attestReport)
+	d, _ := base64.StdEncoding.DecodeString(attestReport.Return.Data)
+	fmt.Println(d)
 }
