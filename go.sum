@@ -5,6 +5,8 @@ github.com/digitalocean/go-libvirt v0.0.0-20220804181439-8648fbde413e/go.mod h1:
 github.com/digitalocean/go-qemu v0.0.0-20220826173844-d5f5e3ceed89 h1:2/52ma1zkjfR9aIrAX1F9H24rpj+PkCDkAwhQgqVR/A=
 github.com/digitalocean/go-qemu v0.0.0-20220826173844-d5f5e3ceed89/go.mod h1:GUMRsCBc7W7BzUF0zizFJ7Pna929325F+v9hvnWD+pI=
 github.com/fatih/camelcase v1.0.0/go.mod h1:yN2Sb0lFhZJUdVvtELVWefmrXpuZESvPmqwoZc+/fpc=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
